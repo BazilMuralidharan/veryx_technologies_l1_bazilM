@@ -8,7 +8,6 @@ const CardContainer = styled.div`
   margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-
   gap: 10px;
 `;
 
