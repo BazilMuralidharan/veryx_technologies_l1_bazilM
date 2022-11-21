@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import { addUser } from "../reduxData/GlobalState";
 
 import { useDispatch } from "react-redux";
+
+const FormContainer = styled.div`
+  display: grid;
+  gap: 5px;
+  width: 420px;
+  margin: 0 auto;
+`;
 
 export default function FormUser() {
   const dispatch = useDispatch();
@@ -29,8 +37,9 @@ export default function FormUser() {
     });
   };
   return (
-    <div>
-      <form onSubmit={submitForm}>
+    <form onSubmit={submitForm}>
+      <h3>dev: BAZIL MURALIDHARAN</h3>
+      <FormContainer>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -40,7 +49,7 @@ export default function FormUser() {
         />
         <label htmlFor="name">Phone</label>
         <input
-          type="text"
+          type="tel"
           name="phone"
           value={state.phone}
           onChange={changeHandler}
@@ -53,7 +62,7 @@ export default function FormUser() {
           onChange={changeHandler}
         />
         <input type="submit" />
-      </form>
-    </div>
+      </FormContainer>
+    </form>
   );
 }
